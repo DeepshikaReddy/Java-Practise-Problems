@@ -329,6 +329,34 @@ public class Practise {
 		sortedMap.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + ":" + entry.getValue()));
 
 	}
+	
+	//Binary Search on Sorted Array
+	 public static int binarySearch(int[] arr, int x) {
+    	//Your code goes here
+        int start =0;
+        int end = arr.length-1;
+        int mid =0;
+        //x=12
+        while(start<= end){
+            mid = (start+end)/2;
+            // System.out.println("<<>>>>");
+            // System.out.println(mid);
+            // System.out.println(start);
+            // System.out.println(end);
+            // System.out.println("<<>>>>");
+                if(arr[mid]==x){
+                    return mid;
+                }else if(arr[mid]<x){
+                   start = mid+1; 
+                }else if(arr[mid] > x){
+                    end = mid -1;
+                }
+        }
+
+        return -1;
+
+
+    }
 
 	static void streamExamples() {
 
