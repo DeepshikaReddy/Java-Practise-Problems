@@ -161,6 +161,22 @@ public class Practise {
 		}
 		System.out.println(arra[arra.length - 2]);
 	}
+	
+	//If two strings are permutation of each other : eg: listen;silent 
+	public static boolean isPermutation(String str1, String str2) {
+		//Your code goes here
+		char[] str_1=str1.toCharArray();
+		char[] str_2=str2.toCharArray();
+		Arrays.sort(str_1);
+		Arrays.sort(str_2);
+		String string_1 = new String(str_1);
+		String string_2 = new String(str_2);
+		if(string_1.equals(string_2)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	// Remove string from List
 	static void removeStringList() {
