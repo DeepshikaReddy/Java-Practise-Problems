@@ -465,7 +465,36 @@ public class Practise {
 
 		}
         return maxKey;
-	}	
+	}
+		
+        //Eg: xxxx o/p: x4 ;  aaabccc o/p: a3bc3		
+        public static String getCompressedString(String str) {
+		// Write your code here.
+		HashMap<Character,Integer> hp= new HashMap<>();
+		char[] charcs = str.toCharArray();
+		for(int i=0;i<charcs.length;i++){
+			
+			if(hp.containsKey(charcs[i])){
+				hp.put(charcs[i], hp.get(charcs[i])+1);
+			}else{
+				hp.put(charcs[i], 1);
+			}
+		}
+		// System.out.println(hp);
+		String output="";
+
+		for(Map.Entry<Character,Integer> entry :  hp.entrySet()){
+			if(entry.getValue()==1){
+				output=output+entry.getKey();
+			}else{
+				output=output+entry.getKey()+entry.getValue();
+			}
+			
+
+		}
+        return output;
+	
+	}
     
   //find first non-repeated character in String.
     String str = "Hello World"; 
