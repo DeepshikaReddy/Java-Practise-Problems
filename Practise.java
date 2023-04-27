@@ -67,6 +67,18 @@ public class Practise {
 		System.out.println(hp);
 		sc.close();
 	}
+	
+	//Reverse string : i/p Im good o/p: good Im
+	static String reverseStringWordWise(){
+	String [] spliString = input.split(" ");
+		String reverseString ="";
+		for(int i=spliString.length-1;i>=0;i--){
+                  reverseString=reverseString+spliString[i]+" ";
+			
+		}
+		return reverseString;	
+		
+	}
 
 	// Reverse an string
 	static void reverseStringMethods() {
