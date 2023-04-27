@@ -178,6 +178,27 @@ public class Practise {
 			return false;
 		}
 	}
+	
+	//Reverse every word in sentence.
+	public static String reversed(String str){
+        char[] chracters= str.toCharArray();
+		String rev="";
+		for(int i = chracters.length-1 ; i>=0;i--){
+			rev=rev+chracters[i];
+
+		}
+				return rev;
+	}
+	public static String reverseEachWord(String str) {
+		String [] stringVal= str.split(" ");
+		String reverString="";
+
+		for(int i=0;i<stringVal.length;i++){
+			reverString=reverString+reversed(stringVal[i])+" ";
+		}
+
+		return reverString;
+	}
 
 	// Remove string from List
 	static void removeStringList() {
