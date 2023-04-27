@@ -213,6 +213,21 @@ public class Practise {
 
 		System.out.println(ls.toString());
 	}
+	
+	//remove all occurences of charcter in string. Eg: abcd;a o/p: bcd
+	public static String removeAllOccurrencesOfChar(String str, char ch) {
+		
+		String output="";
+		char[] charcatres= str.toCharArray();
+
+		for(int i=0;i<charcatres.length;i++){
+			if(charcatres[i]==ch){
+				continue;
+			}
+			output=output+charcatres[i];
+		}
+		return output;
+	}
 
 	// Check if strings have same character.
 	static void arraySameCharcaters() {
