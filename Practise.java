@@ -440,6 +440,32 @@ public class Practise {
     al.stream().findFirst().orElse(null);
     al.stream().count();
     al.stream().max(Integer::compare).get();
+	
+    //Fetch the character highest occuring . Eg: aaabbc o/p:a		
+    public static char highestOccuringChar(String str) {
+		HashMap<Character,Integer> hp= new HashMap<>();
+		char[] charcs = str.toCharArray();
+		for(int i=0;i<charcs.length;i++){
+			
+			if(hp.containsKey(charcs[i])){
+				hp.put(charcs[i], hp.get(charcs[i])+1);
+			}else{
+				hp.put(charcs[i], 1);
+			}
+		}
+		// System.out.println(hp);
+		Character maxKey = null;
+		int maxVal = Integer.MIN_VALUE;
+
+		for(Map.Entry<Character,Integer> entry :  hp.entrySet()){
+			if(entry.getValue() >maxVal){
+				maxVal = entry.getValue();
+        		maxKey = entry.getKey();
+			}
+
+		}
+        return maxKey;
+	}	
     
   //find first non-repeated character in String.
     String str = "Hello World"; 
